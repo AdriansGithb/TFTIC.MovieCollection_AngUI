@@ -27,7 +27,7 @@ export class SignComponent implements OnInit {
 
   ngOnInit(): void {
     //this.signForm = this.formBuilder.group(F_Signing);
-    this.signForm.setValue({ usermail: "user@test.com", password: "user" });
+    this.signForm.setValue({ usermail: "admin@test.com", password: "admin" });
     this.returnUrl = '/home';
     this.sessionServ.closeSession();
   }

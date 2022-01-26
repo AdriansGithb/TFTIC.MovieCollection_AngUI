@@ -7,25 +7,27 @@
       <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <!-- General user menus  -->
         <ul *ngIf="(currentUser)" class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              User Access
+          <li class="nav-item dropdown" *ngFor="let link of userLinkList; let i= index">
+            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="link.url">
+              {{link.title}}
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" routerLink="useraccess">UserAccess</a></li>
-              <li><a class="dropdown-item" routerLink="adminaccess">AdminAccess</a></li>
+              <li *ngFor="let child of link.children">
+                <a class="dropdown-item" [routerLink]="child.url">{{child.title}}</a>
+              </li>
             </ul>
           </li>
         </ul>
         <!-- Admin menus  -->
         <ul *ngIf="(currentUser?.isAdmin)" class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Admin Access
+          <li class="nav-item dropdown" *ngFor="let link of adminLinkList; let i= index">
+            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="link.url">
+              {{link.title}}
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" routerLink="">Link 1</a></li>
-              <li><a class="dropdown-item" routerLink="">Link 2</a></li>
+              <li *ngFor="let child of link.children">
+                <a class="dropdown-item" [routerLink]="child.url">{{child.title}}</a>
+              </li>
             </ul>
           </li>
         </ul>

@@ -16,6 +16,7 @@ import { IsUserGuard } from './guards/is-user.guard';
 import { IsAdminGuard } from './guards/is-admin.guard';
 import { RegisterComponent } from './components/register/register.component';
 import { IsAnonymousGuard } from './guards/is-anonymous.guard';
+import { AdministrationRoutingModule } from './pages/administration/administration-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { IsAnonymousGuard } from './guards/is-anonymous.guard';
     HomeComponent,
     LoggeduserAccessComponent,
     LoggedadminAccessComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdministrationRoutingModule
   ],
   providers: [IsUserGuard, IsAdminGuard, IsAnonymousGuard],
   bootstrap: [AppComponent]

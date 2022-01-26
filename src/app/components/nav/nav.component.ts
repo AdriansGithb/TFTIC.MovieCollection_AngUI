@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Link } from 'src/app/classes/link.class';
 import { User } from 'src/app/models/user.model';
 import { SessionService } from 'src/app/services/session.service';
 
@@ -12,12 +13,26 @@ import { SessionService } from 'src/app/services/session.service';
 export class NavComponent implements OnInit {
   logSub : Subscription = new Subscription();
   currentUser : User | null = null;
+  adminLinkList : Link[] = [];
+  userLinkList : Link[] = [];
   
   constructor(private router: Router, private sessionServ : SessionService){
   }
   
   ngOnInit(): void {
     this.logSub = this.sessionServ.user$.subscribe(subUser => this.currentUser = subUser);
+
+    this.adminLinkList = [
+      {title : 'Administration', children : [
+        {title : 'Countries', url : '/administration/countries'},
+      ]}
+    ]
+    this.userLinkList = [
+      {title : 'User menu', children : [
+        {title : 'UserAccess', url : '/useraccess'},
+      ]}
+    ]
+
   }
 
   logout(){
