@@ -14,6 +14,8 @@ import { LoggedadminAccessComponent } from './pages/loggedadmin-access/loggedadm
 import { HttpClientModule } from '@angular/common/http';
 import { IsUserGuard } from './guards/is-user.guard';
 import { IsAdminGuard } from './guards/is-admin.guard';
+import { RegisterComponent } from './components/register/register.component';
+import { IsAnonymousGuard } from './guards/is-anonymous.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { IsAdminGuard } from './guards/is-admin.guard';
     SignComponent,
     HomeComponent,
     LoggeduserAccessComponent,
-    LoggedadminAccessComponent
+    LoggedadminAccessComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { IsAdminGuard } from './guards/is-admin.guard';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [IsUserGuard, IsAdminGuard],
+  providers: [IsUserGuard, IsAdminGuard, IsAnonymousGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

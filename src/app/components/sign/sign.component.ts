@@ -45,6 +45,7 @@ export class SignComponent implements OnInit {
         complete: () => {
           if (this.user) {
             this.sessionServ.openSession(this.user);
+            alert(`Bienvenue ${this.user.name}`);
             this.router.navigate([this.returnUrl]);
           };
         }

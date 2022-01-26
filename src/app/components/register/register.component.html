@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="col-md-6 col-md-offset-3 loginBox">
+        <h3>Register</h3>
+        <p>{{msg}}</p>
+        <form [formGroup]="regForm" (ngSubmit)="registering()">
+            <div class="form-group clearfix">
+                <label class="col-md-3 col-sm-5 col-xs-12" for="usermail">User email</label>
+                <div class="col-md-9 col-sm-7 col-xs-12">
+                    <input class="form-control" formControlName="usermail" type="text" />
+                    <div>
+                        <div>User mail is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-md-3 col-sm-5 col-xs-12" for="name">User name</label>
+                <div class="col-md-9 col-sm-7 col-xs-12">
+                    <input class="form-control" formControlName="name" type="text" />
+                    <div>
+                        <div>User name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-md-3 col-sm-5 col-xs-12" for="password">Password</label>
+                <div class="col-md-9 col-sm-7 col-xs-12">
+                    <input class="form-control" formControlName="password" type="password" />
+                    <div>
+                        <div>Password is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <label class="col-md-3 col-sm-5 col-xs-12" for="repeatedPassword">Repeat Password</label>
+                <div class="col-md-9 col-sm-7 col-xs-12">
+                    <input class="form-control" formControlName="repeatedPassword" type="password" />
+                    <div>
+                        <div>Repeat Password is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-group text-right"><button class="btn btn-success" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

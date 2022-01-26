@@ -15,6 +15,7 @@ currentUser : User | null = null;
 
 
 constructor(private sessionServ : SessionService){
+  // this.currentUser = this.sessionServ.getCurrentUser();
 }
 
   ngOnInit(): void {

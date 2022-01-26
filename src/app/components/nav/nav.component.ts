@@ -22,6 +22,7 @@ export class NavComponent implements OnInit {
 
   logout(){
     this.sessionServ.closeSession();
+    alert("Au revoir, à bientôt !");
     this.router.navigate(['/home']);
   }
 

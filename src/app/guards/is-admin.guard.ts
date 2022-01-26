@@ -11,15 +11,16 @@ export class IsAdminGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if (!this.sessionServ.user$.value?.token) {
+    if (!this.sessionServ.getCurrentUser()) {
       // navigate to Login page as user is not authenticated
       this.router.navigate(['/sign']);
       return false;
     }
-    if (this.sessionServ.user$.value?.isAdmin) {
+    if (this.sessionServ.getCurrentUser()?.isAdmin) {
       return true;
     }
     console.log('User is not a admin, access refused');
+    this.router.navigate(['/home']);
     return false;
   }
   

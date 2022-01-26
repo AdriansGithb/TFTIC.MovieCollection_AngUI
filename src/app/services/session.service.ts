@@ -6,7 +6,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class SessionService {
-  user$ = new BehaviorSubject<User | null>(null);
+  user$ = new BehaviorSubject<User | null>(this.getCurrentUser());
 
   constructor() { }
 
