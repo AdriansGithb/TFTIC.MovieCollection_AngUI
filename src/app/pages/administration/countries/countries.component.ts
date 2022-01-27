@@ -11,7 +11,6 @@ import { CountriesService } from 'src/app/services/countries.service';
 export class CountriesComponent implements OnInit {
   countriesList!: Country[] ;
   newCntryName : string = "";
-  msg : string = "";
 
   constructor(private cntryServ : CountriesService ) {
   }

@@ -1,0 +1,41 @@
+<h2 style="text-align: center;">Lister et créer des audiences</h2>
+
+
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Ajouter une nouvelle audience</h4>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" [(ngModel)]="newAudienceLabel">
+            <button class="btn btn-primary" type="button" (click)="onSubmitAction()">Enregistrer</button>
+        </div>
+    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Liste des audiences</h4>
+        <table class="table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Label</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let audience of audiencesList">
+                    <td class="w-25">{{ audience.idAudience }}</td>
+                    <td class="w-25" style="font-weight: bold;">{{ audience.label }}</td>
+                    <td class="input-group "> 
+                            <input type="text" class="form-control" id="{{ audience.idAudience }}">
+                            <button class="btn btn-success" type="button" (click)="onUpdateAction(audience.idAudience)">Mettre à jour</button>
+                    </td>
+                    <td ><button class="btn btn-danger" (click)="onDeleteAction(audience.idAudience)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

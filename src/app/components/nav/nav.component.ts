@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
     this.adminLinkList = [
       {title : 'Administration', children : [
         {title : 'Countries', url : '/administration/countries'},
+        {title : 'Audiences', url : '/administration/audiences'},
       ]}
     ]
     this.userLinkList = [
