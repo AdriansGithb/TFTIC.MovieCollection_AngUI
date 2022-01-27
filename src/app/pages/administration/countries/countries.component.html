@@ -1,1 +1,41 @@
-<p>countries works!</p>
+<h2 style="text-align: center;">Lister et créer des pays</h2>
+
+
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Ajouter un nouveau pays</h4>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" [(ngModel)]="newCntryName">
+            <button class="btn btn-primary" type="button" (click)="onSubmitAction()">Enregistrer</button>
+        </div>
+    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Liste des pays</h4>
+        <table class="table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let country of countriesList">
+                    <td class="w-25">{{ country.idCountry }}</td>
+                    <td class="w-25" style="font-weight: bold;">{{ country.name }}</td>
+                    <td class="input-group "> 
+                            <input type="text" class="form-control" id="{{ country.idCountry }}">
+                            <button class="btn btn-success" type="button" (click)="onUpdateAction(country.idCountry)">Mettre à jour</button>
+                    </td>
+                    <td ><button class="btn btn-danger" (click)="onDeleteAction(country.idCountry)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

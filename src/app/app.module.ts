@@ -11,12 +11,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoggeduserAccessComponent } from './pages/loggeduser-access/loggeduser-access.component';
 import { LoggedadminAccessComponent } from './pages/loggedadmin-access/loggedadmin-access.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IsUserGuard } from './guards/is-user.guard';
 import { IsAdminGuard } from './guards/is-admin.guard';
 import { RegisterComponent } from './components/register/register.component';
 import { IsAnonymousGuard } from './guards/is-anonymous.guard';
 import { AdministrationRoutingModule } from './pages/administration/administration-routing.module';
+import { TokenInterceptorInterceptor } from './interceptors/token-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AdministrationRoutingModule } from './pages/administration/administrati
     HttpClientModule,
     AdministrationRoutingModule
   ],
-  providers: [IsUserGuard, IsAdminGuard, IsAnonymousGuard],
+  providers: [IsUserGuard, IsAdminGuard, IsAnonymousGuard, { provide : HTTP_INTERCEPTORS, useClass : TokenInterceptorInterceptor, multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

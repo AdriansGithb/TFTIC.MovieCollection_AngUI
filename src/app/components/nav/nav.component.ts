@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Link } from 'src/app/classes/link.class';
+import { Link } from 'src/app/models/link.model';
 import { User } from 'src/app/models/user.model';
 import { SessionService } from 'src/app/services/session.service';
 

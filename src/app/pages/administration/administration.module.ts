@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdministrationRoutingModule } from './administration-routing.module';
 import { AdministrationComponent } from './administration.component';
 import { CountriesComponent } from './countries/countries.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CountriesComponent } from './countries/countries.component';
   ],
   imports: [
     CommonModule,
-    AdministrationRoutingModule
+    AdministrationRoutingModule,
+    FormsModule
   ]
 })
 export class AdministrationModule { }
