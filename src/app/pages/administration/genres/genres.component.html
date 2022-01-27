@@ -1,0 +1,41 @@
+<h2 style="text-align: center;">Lister et créer des genres</h2>
+
+
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Ajouter un nouveau genre</h4>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" [(ngModel)]="newGenreLabel">
+            <button class="btn btn-primary" type="button" (click)="onSubmitAction()">Enregistrer</button>
+        </div>
+    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4 style="color: gray;">Liste des genres</h4>
+        <table class="table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Label</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let genre of genresList">
+                    <td class="w-25">{{ genre.idGenre }}</td>
+                    <td class="w-25" style="font-weight: bold;">{{ genre.label }}</td>
+                    <td class="input-group "> 
+                            <input type="text" class="form-control" id="{{ genre.idGenre }}">
+                            <button class="btn btn-success" type="button" (click)="onUpdateAction(genre.idGenre)">Mettre à jour</button>
+                    </td>
+                    <td ><button class="btn btn-danger" (click)="onDeleteAction(genre.idGenre)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="home">My Movie Collection</a>
+      <a class="navbar-brand  mx-auto" routerLink="home">My Movie Collection</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,9 +19,9 @@
           </li>
         </ul>
         <!-- Admin menus  -->
-        <ul *ngIf="(currentUser?.isAdmin)" class="navbar-nav">
+        <ul *ngIf="(currentUser?.isAdmin)" class="navbar-nav mx-auto">
           <li class="nav-item dropdown" *ngFor="let link of adminLinkList; let i= index">
-            <a class="nav-link dropdown-toggle" style="color:darkred; font-weight: bold;" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="link.url">
+            <a class="nav-link dropdown-toggle" style="color:darkorange; font-weight: bolder;" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="link.url">
               {{link.title}}
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
