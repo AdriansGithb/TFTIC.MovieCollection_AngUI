@@ -1,0 +1,30 @@
+<div class="row" style="text-align: center;">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <h3 style="color: gray;">Liste des artistes</h3>
+        <table class="table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>FirstName</th>
+                    <th>BirthDate</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let artist of artistsList">
+                    <td>{{ artist.idArtist }}</td>
+                    <td style="font-weight: bold;">{{ artist.name }}</td>
+                    <td style="font-weight: bold;">{{ artist.firstName }}</td>
+                    <td>{{ artist.birthDate | date :'dd MMM YYYY' }}</td>
+                    <td ><button class="btn btn-success" (click)="onUpdateAction(artist.idArtist)">Modifier</button>
+                    </td>
+                    <td ><button class="btn btn-danger" (click)="onDeleteAction(artist.idArtist)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'register', component : RegisterComponent, canActivate:[IsAnonymousGuard]  },
   { path: 'useraccess', component : LoggeduserAccessComponent, canActivate : [IsUserGuard]  },
   { path: 'adminaccess', component : LoggedadminAccessComponent, canActivate : [IsAdminGuard] },
-  { path: 'administration', loadChildren: () => import('./pages/administration/administration.module').then(m => m.AdministrationModule)}
+  { path: 'administration', loadChildren: () => import('./pages/administration/administration.module').then(m => m.AdministrationModule)},
 
 ];
 

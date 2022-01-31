@@ -1,0 +1,26 @@
+<div class="row" >
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h3 style="color: gray; text-align: center;">Ajouter/modifier un artiste</h3>
+        <button class="btn btn-warning" *ngIf="isAnUpdate" (click)="onCancelUpdate()">Annuler modification</button>
+        <form [formGroup]="artForm" (ngSubmit)="onSubmit()">
+            <p>{{msg}}</p>
+            <div class="mb-3" *ngIf="isAnUpdate">
+                <p for="idArtist" class="form-label">Id : {{artForm.value.idArtist}}</p>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+            <div class="mb-3">
+                <label for="birthDate" class="form-label">Date de Naissance</label>
+                <input class="form-control" type ="date" id ="birthDate" formControlName="birthDate" >
+            </div>            
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </div>
+</div>

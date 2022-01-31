@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   user!: User;
 
   constructor(
-    private formBuilder: FormBuilder,
+    // private formBuilder: FormBuilder,
     private router: Router,
     private authServ: AuthService,
     private sessionServ: SessionService

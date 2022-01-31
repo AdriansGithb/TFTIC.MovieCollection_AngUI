@@ -27,6 +27,7 @@ export class NavComponent implements OnInit {
         {title : 'Countries', url : '/administration/countries'},
         {title : 'Audiences', url : '/administration/audiences'},
         {title : 'Genres', url : '/administration/genres'},
+        {title : 'Artists', url : '/administration/artists'},
       ]}
     ]
     this.userLinkList = [

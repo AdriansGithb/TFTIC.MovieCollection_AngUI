@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { IsAnonymousGuard } from './guards/is-anonymous.guard';
 import { AdministrationRoutingModule } from './pages/administration/administration-routing.module';
 import { TokenInterceptorInterceptor } from './interceptors/token-interceptor.interceptor';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { TokenInterceptorInterceptor } from './interceptors/token-interceptor.in
     HttpClientModule,
     AdministrationRoutingModule
   ],
-  providers: [IsUserGuard, IsAdminGuard, IsAnonymousGuard, { provide : HTTP_INTERCEPTORS, useClass : TokenInterceptorInterceptor, multi:true }],
+  providers: [DatePipe ,IsUserGuard, IsAdminGuard, IsAnonymousGuard, { provide : HTTP_INTERCEPTORS, useClass : TokenInterceptorInterceptor, multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
